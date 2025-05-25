@@ -1,0 +1,148 @@
+/* src/pages/HomePage.module.css */
+
+.heroSection {
+  padding: 4rem 1rem;
+  text-align: center;
+  /* background-color: var(--elements-background); */ /* Opcional: um fundo diferente para a hero */
+  /* border-bottom: 1px solid var(--pomp-and-power); */
+  margin-bottom: 3rem; /* Espaço antes da grade de projetos */
+}
+
+.heroTitle {
+  font-size: 3rem;
+  color: var(--white-smoke); /* Texto principal branco */
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.heroTitle span { /* Para destacar uma palavra com cor */
+    color: var(--pomp-and-power); /* Roxo no título */
+}
+
+.heroSubtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary); /* Cinza claro para subtitulo */
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectsGridTitle {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--white-smoke);
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.projectsGridTitle span {
+    color: var(--blue-munsell); /* Destaque azul */
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid responsivo */
+  gap: 2rem; /* Espaço entre os cards */
+}
+
+.projectCard {
+  background-color: var(--elements-background); /* Roxo como fundo do card */
+  padding: 1.5rem;
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Sombra sutil */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.projectCard:hover {
+    transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.projectCard h3 {
+  margin-top: 0;
+  color: var(--white-smoke); /* Título do card branco */
+  font-size: 1.5rem;
+}
+
+.projectCard h3 span { /* Para destacar uma parte do título do card */
+    color: var(--burnt-sienna); /* Laranja no título do card */
+}
+
+.projectCard p {
+  color: var(--text-secondary); /* Descrição cinza claro */
+  flex-grow: 1; /* Faz a descrição ocupar o espaço e empurra o link para baixo */
+  margin-bottom: 1.5rem;
+}
+
+.projectCard a { /* Estilo do link/botão dentro do card */
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background-color: var(--blue-munsell); /* Botão azul */
+  color: var(--white-smoke) !important; /* Força a cor do texto para branco */
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  align-self: flex-start; /* Alinha o botão à esquerda */
+}
+
+.projectCard a:hover {
+  background-color: var(--burnt-sienna); /* Botão laranja no hover */
+  color: var(--white-smoke) !important;
+  text-decoration: none;
+}
+
+.actionButtonsContainer {
+  display: flex;
+  justify-content: center; /* Centraliza os botões */
+  align-items: center;
+  gap: 1rem; /* Espaço entre os botões */
+  margin-top: 2.5rem; /* Espaço acima dos botões */
+  flex-wrap: wrap; /* Permite que os botões quebrem linha em telas menores */
+}
+
+.actionButton {
+  padding: 0.8em 1.6em; /* Tamanho do padding */
+  border-radius: 6px;   /* Bordas arredondadas */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem; /* Tamanho da fonte */
+  color: var(--white-smoke) !important; /* Garante texto branco, sobrescrevendo 'a' global se necessário */
+  border: none; /* Remove qualquer borda padrão */
+  cursor: pointer;
+  transition: transform 0.2s ease-out, background-color 0.2s ease-out, box-shadow 0.2s ease-out;
+  text-align: center;
+  min-width: 150px; /* Largura mínima para manter consistência */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra sutil inicial */
+}
+
+.actionButton:hover {
+  transform: translateY(-3px); /* Efeito de levantar um pouco mais */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra mais pronunciada no hover */
+}
+
+/* Estilos específicos para cada botão, usando sua paleta */
+.linkedinButton {
+  background-color: var(--blue-munsell); /* Azul para LinkedIn */
+}
+.linkedinButton:hover {
+  /* Escurece um pouco a cor no hover */
+  background-color: color-mix(in srgb, var(--blue-munsell) 85%, var(--night) 15%);
+}
+
+.contactButton {
+  background-color: var(--burnt-sienna); /* Laranja/Terracota para Contato */
+}
+.contactButton:hover {
+  background-color: color-mix(in srgb, var(--burnt-sienna) 85%, var(--night) 15%);
+}
+
+.coffeeButton {
+  background-color: var(--pomp-and-power); /* Roxo para Buy Me a Coffee */
+}
+.coffeeButton:hover {
+  background-color: color-mix(in srgb, var(--pomp-and-power) 85%, var(--night) 15%);
+}
