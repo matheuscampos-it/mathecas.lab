@@ -53,7 +53,7 @@ function HomePage() {
             Contact Me
           </a>
           <a 
-            href="#" // Link placeholder - substitua quando tiver sua página "Buy Me a Coffee"
+            href="https://www.paypal.com/donate/?hosted_button_id=GRJLCYKPLLTLE" target="_blank"
             className={`${styles.actionButton} ${styles.coffeeButton}`}
             title="Support my work!" // Opcional: title para mais info no hover
           >
