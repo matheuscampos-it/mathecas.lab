@@ -1,0 +1,192 @@
+/* src/pages/CosmicSlothOracle/CosmicSlothOraclePage.module.css */
+
+.oracleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+  min-height: 80vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    linear-gradient(rgba(13, 22, 11, 0.9), rgba(13, 22, 11, 0.98)),
+    url('/images/sloth.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.oracleHeader {
+  margin-bottom: 1.5rem; /* Reduzido um pouco */
+  z-index: 1;
+  background-color: rgba(13, 22, 11, 0.4);
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 700px;
+  width: 90%;
+}
+
+.title {
+  color: var(--pomp-and-power);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 18px var(--pomp-and-power), 0 0 25px var(--pomp-and-power);
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* --- ESTILOS PARA O INPUT --- */
+.inputArea {
+  margin-bottom: 1.5rem; /* Espaço entre input e botão */
+  width: 100%;
+  max-width: 550px; /* Largura do input */
+  z-index: 1;
+}
+
+.queryInput {
+  width: 100%;
+  padding: 0.9em 1.2em;
+  background-color: rgba(245, 243, 245, 0.05); /* Fundo bem sutil quase transparente */
+  color: var(--white-smoke);
+  border: 1px solid var(--pomp-and-power); /* Borda roxa */
+  border-radius: 8px; /* Bordas mais suaves */
+  font-size: 1.05rem;
+  text-align: center;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-sizing: border-box; /* Para o padding não aumentar a largura total */
+}
+
+.queryInput::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.queryInput:focus {
+  outline: none;
+  border-color: var(--blue-munsell); /* Azul no foco */
+  box-shadow: 0 0 12px var(--blue-munsell); /* Brilho azul no foco */
+}
+
+.queryInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+/* --- FIM DOS ESTILOS PARA O INPUT --- */
+
+.interactionArea {
+  margin-bottom: 2rem; /* Ajustado */
+  z-index: 1;
+}
+
+.oracleButton {
+  background-color: var(--blue-munsell);
+  color: var(--white-smoke);
+  padding: 1em 2.2em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.15rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+}
+
+.oracleButton:hover:not(:disabled) {
+  background-color: var(--burnt-sienna);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 7px 18px rgba(0,0,0,0.45);
+}
+
+.oracleButton:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+.responseArea {
+  margin-top: 1rem;
+  padding: 2rem 2.5rem; /* Aumentado padding lateral */
+  background-color: var(--elements-background);
+  border: 2px solid color-mix(in srgb, var(--pomp-and-power) 70%, var(--white-smoke) 30%);
+  border-radius: 15px;
+  color: var(--white-smoke);
+  font-size: 1.3rem;
+  line-height: 1.8;
+  max-width: 700px;
+  width: 90%;
+  min-height: 150px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Adicionado opacity na transição */
+  z-index: 1;
+}
+
+.initialMessage { /* Estilo para a mensagem de boas-vindas */
+  color: var(--text-secondary);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.intermediaryMessage {
+  font-style: italic; /* Mensagens intermediárias em itálico */
+  color: var(--text-secondary); /* Cor mais suave */
+  animation: gentleFadeAndPulse 1.5s infinite ease-in-out, textAppear 0.5s ease-out;
+}
+
+.finalWisdomResponse { /* Classe adicional para a área de resposta quando é a sabedoria final */
+  border-color: var(--blue-munsell); /* Borda azul para destacar a resposta final */
+  box-shadow: 0 0 25px var(--blue-munsell); /* Brilho azul */
+}
+
+.revealedWisdom { /* Para a sabedoria final */
+  opacity: 1;
+  font-weight: 500; /* Levemente mais destacado */
+  animation: fadeInWisdom 0.8s ease-out forwards;
+}
+
+@keyframes textAppear { /* Animação simples para novas mensagens aparecerem */
+  from { opacity: 0.3; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gentleFadeAndPulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* Mantive fadeInWisdom e pulseText (renomeado para gentleFadeAndPulse ou similar) como antes se ainda forem usados */
+/* Ou pode adaptar a animação .loadingWisdom se o texto do botão for suficiente */
+@keyframes fadeInWisdom {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.oracleFooter {
+  margin-top: 3.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  z-index: 1;
+  background-color: rgba(13, 22, 11, 0.5);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  max-width: 700px;
+  width: 90%;
+}

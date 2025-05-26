@@ -3,7 +3,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout'; // Importe o Layout
 import HomePage from './pages/HomePage'; // Importe a HomePage
-import CosmicSlothOraclePage from './pages/CosmicSlothOraclePage'; // Importe a página do minigame
+import CosmicSlothOraclePage from './pages/CosmicSlothOracle/CosmicSlothOraclePage';
 
 // Opcional: Crie uma página Not Found
 // import NotFoundPage from './pages/NotFoundPage';
