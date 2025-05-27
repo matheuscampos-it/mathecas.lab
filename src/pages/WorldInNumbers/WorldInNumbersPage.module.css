@@ -1,0 +1,233 @@
+/* src/pages/WorldInNumbers/WorldInNumbersPage.module.css */
+
+/* --- Contêiner e Cabeçalho da Página --- */
+.pageContainer {
+  padding: 2rem 1.5rem 4rem; /* Mais padding inferior */
+  max-width: 1300px; /* Um pouco mais largo para dashboards */
+  margin: 0 auto;
+  animation: fadeInPage 0.5s ease-out; /* Animação de entrada da página */
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 3.5rem; /* Mais espaço */
+}
+
+.pageTitle {
+  font-size: 3.2rem; /* Título maior */
+  color: var(--white-smoke);
+  font-weight: 700; /* Mais peso */
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.pageTitle span {
+  color: var(--pomp-and-power); /* Roxo principal para destaque */
+  text-shadow: 0 0 10px var(--pomp-and-power); /* Leve brilho roxo */
+}
+
+.pageSubtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto; /* Centralizar subtítulo */
+}
+
+/* --- Grade de Estatísticas e Cards --- */
+.statsGrid {
+  display: grid;
+  /* Mais colunas em telas maiores, mínimo de 260px para os cards */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+  gap: 2.5rem; /* Mais espaço entre os cards */
+  margin-bottom: 4rem;
+}
+
+.statCard {
+  background-color: var(--elements-background); /* Roxo como fundo do card */
+  padding: 2rem;
+  border-radius: 12px; /* Bordas mais arredondadas */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 15px var(--pomp-and-power) inset; /* Sombra externa e interna sutil roxa */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 4px solid transparent; /* Borda superior para acento de cor */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-top-color 0.3s ease;
+  overflow: hidden; 
+  position: relative; 
+}
+
+.statCard:nth-child(3n + 1) { border-top-color: var(--blue-munsell); }
+.statCard:nth-child(3n + 2) { border-top-color: var(--burnt-sienna); }
+.statCard:nth-child(3n + 3) { border-top-color: var(--pomp-and-power); }
+
+
+.statCard:hover {
+  transform: translateY(-8px) scale(1.02); 
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4), 0 0 20px var(--pomp-and-power) inset;
+}
+
+.statLabel {
+  font-size: 1rem; 
+  color: var(--text-secondary);
+  margin-top: 0;
+  margin-bottom: 1rem; 
+  font-weight: 600; 
+  text-transform: uppercase;
+  letter-spacing: 0.8px; 
+}
+
+.statValue {
+  font-size: 3rem; 
+  color: var(--white-smoke); 
+  font-weight: 700; 
+  margin: 0.5rem 0;
+  line-height: 1; 
+  letter-spacing: -1px; 
+}
+
+.statCard:nth-child(3n + 1) .statValue { color: var(--blue-munsell); }
+.statCard:nth-child(3n + 2) .statValue { color: var(--burnt-sienna); }
+.statCard:nth-child(3n + 3) .statValue { color: var(--white-smoke); }
+
+
+.statUnit {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem; 
+  font-style: italic;
+}
+
+/* --- Seção do Gráfico --- */
+.chartSection { /* Renomeado de .interactiveDashboard para .chartSection se for só o gráfico */
+  margin-top: 4rem;
+  padding: 2.5rem; 
+  background-color: rgba(13, 22, 11, 0.2); 
+  border-radius: 12px; 
+  border: 1px solid var(--pomp-and-power);
+}
+
+/* Seção do Dashboard Interativo (para controles e gráfico) */
+.interactiveDashboard {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #515158; /* Exemplo: Cinza claro para tema escuro */
+  /* Outras opções que você pode testar: */
+  /* background-color: rgba(245, 243, 245, 0.15); */ /* --white-smoke com baixa opacidade */
+  /* background-color: rgba(120, 85, 137, 0.15); */ /* Tom claro do --pomp-and-power */
+  border-radius: 12px;
+  border: 1px solid var(--pomp-and-power);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.countryChartContainer {
+  height: 480px; 
+  background-color: rgba(13, 22, 11, 0.4); 
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 5px rgba(0,0,0,0.2), 0 0 10px rgba(13,22,11,0.3);
+}
+
+.sectionTitle { /* Usado tanto para "Featured Experiments" na home quanto aqui */
+  text-align: center;
+  font-size: 2rem; 
+  color: var(--white-smoke);
+  margin-top: 0; 
+  margin-bottom: 2.5rem; 
+  font-weight: 600;
+}
+
+.sectionTitle span { /* Para destacar palavras no título da seção */
+    color: var(--blue-munsell); /* Ou outra cor de acento */
+}
+
+
+.controlsContainer {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selectLabel {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 0.5rem; /* Espaço entre label e select */
+}
+
+.countrySelect {
+  padding: 0.75em 1.2em;
+  background-color: var(--surface-background); 
+  color: var(--white-smoke);
+  border: 1px solid var(--pomp-and-power);
+  border-radius: 6px;
+  font-size: 1rem;
+  min-width: 280px; /* Largura mínima maior */
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.countrySelect:hover {
+  border-color: var(--blue-munsell);
+}
+
+.countrySelect:focus {
+  outline: none;
+  border-color: var(--blue-munsell);
+  box-shadow: 0 0 8px var(--blue-munsell);
+}
+
+.countrySelect:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.countryChartContainer {
+  height: 480px; /* Altura aumentada para o gráfico */
+  background-color: rgba(13, 22, 11, 0.4); /* Fundo um pouco mais claro que o principal para o gráfico */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 5px rgba(0,0,0,0.2), 0 0 10px rgba(13,22,11,0.3); /* Sombra interna e leve externa */
+}
+
+.noDataMessage {
+    text-align: center;
+    padding: 3rem; /* Mais padding */
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 1.1rem; /* Ligeiramente maior */
+    background-color: rgba(var(--elements-background-rgb, 120, 85, 137), 0.1); /* Fundo roxo muito sutil */
+    border-radius: 8px;
+}
+
+/* --- Mensagens de Feedback --- */
+.loadingMessage, .errorMessage {
+  text-align: center;
+  font-size: 1.3rem; 
+  padding: 4rem 2rem; 
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-radius: 8px;
+  margin: 2rem auto; 
+  max-width: 600px;
+}
+
+.loadingMessage {
+    background-color: rgba(var(--pomp-and-power-rgb, 120, 85, 137), 0.15); /* Roxo sutil para loading */
+}
+
+.errorMessage {
+  color: var(--white-smoke); 
+  background-color: var(--burnt-sienna); 
+  font-weight: bold;
+}

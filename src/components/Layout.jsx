@@ -68,7 +68,7 @@ function Layout() {
         <nav style={{ marginTop: '1.5rem' }}>
           <Link to="/" style={navLinkStyle}>Home</Link>
           <Link to="/cosmic-sloth-oracle" style={navLinkStyle}>Cosmic Sloth Oracle</Link>
-          {/* Adicione mais links aqui */}
+          <Link to="/world-in-numbers" style={navLinkStyle}>World in Numbers</Link>
         </nav>
       </header>
 
