@@ -1,6 +1,6 @@
 # ✨ mathecas.lab ✨
 
-Welcome to **mathecas.lab** – an interactive playground where curiosity meets code! This is a personal collection of fun web experiments, mini-games, and digital oddities, inspired by sites like [neal.fun](https://neal.fun).
+Welcome to **mathecas.lab** – an interactive playground where curiosity meets code! This is a personal collection of fun web experiments, mini-games, and digital oddities, inspired by sites like [neal.fun](https://neal.fun) and [pudding.cool](https://pudding.cool).
 
 **🚀 [Link to Live Site - Coming Soon!] 🚀**
 
