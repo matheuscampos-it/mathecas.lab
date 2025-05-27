@@ -108,7 +108,7 @@ Example: This project is licensed under the MIT License - see the `LICENSE.md` f
 
 ## 🙏 Acknowledgements (Optional)
 
-* Inspiration from [neal.fun](https://neal.fun) for the concept of a collection of web experiments.
+* Inspiration from [neal.fun](https://neal.fun) and [pudding.cool](https://pudding.cool) for the concept of a collection of web experiments.
 * You! For checking out the lab.
 
 ---
