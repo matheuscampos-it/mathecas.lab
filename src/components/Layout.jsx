@@ -2,24 +2,25 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
+// Supondo que seu CSS global (index.css ou App.css) já defina as variáveis de cor
+// como --night, --pomp-and-power, --white-smoke, --text-secondary, --blue-munsell, etc.
+
 function Layout() {
   const currentYear = new Date().getFullYear();
 
   const headerStyle = {
-    // backgroundColor: 'var(--elements-background)', // Roxo como fundo do header
-    backgroundColor: 'var(--night)', // Ou manter o fundo do header igual ao body e usar bordas
+    backgroundColor: 'var(--night)', 
     padding: '1.5rem 2rem',
     textAlign: 'center',
-    borderBottom: `2px solid var(--pomp-and-power)` // Borda roxa
+    borderBottom: `2px solid var(--pomp-and-power)` 
   };
 
   const siteTitleStyle = {
-    // color: 'var(--white-smoke)', // Texto branco sobre o fundo roxo
-    color: 'var(--pomp-and-power)', // Título roxo sobre fundo --night
+    color: 'var(--pomp-and-power)', 
     margin: '0',
     fontSize: '2.5rem',
     textDecoration: 'none',
-    fontWeight: 'bold', // Título mais destacado
+    fontWeight: 'bold',
   };
 
   const taglineStyle = {
@@ -28,52 +29,35 @@ function Layout() {
     fontSize: '1rem'
   };
 
-  const navLinkStyle = {
-    margin: '0 0.75rem', // Espaçamento entre links
-    color: 'var(--blue-munsell)', // Links da navegação
-    fontWeight: '500',
-    fontSize: '1.1rem'
-  };
-  
-  const navLinkHoverStyle = { // Você precisaria de JS para hover em inline styles ou usar classes CSS
-      // Para hover, é melhor usar classes CSS. Por agora, a tag <a> global cuidará disso.
-  };
-
-
   const mainContentStyle = {
-    flexGrow: 1,
-    padding: '2rem',
-    maxWidth: '1024px', // Um pouco mais de largura
+    flexGrow: 1, // Para o footer ficar no final da página
+    padding: '2rem', // Padding principal do conteúdo
+    maxWidth: '1300px', // Mantendo a largura do WorldInNumbersPage
     margin: '0 auto',
     width: '100%'
   };
 
   const footerStyle = {
-    // backgroundColor: 'var(--elements-background)',
     backgroundColor: 'var(--night)',
     padding: '1.5rem 2rem',
     textAlign: 'center',
     color: 'var(--text-secondary)',
-    borderTop: `2px solid var(--pomp-and-power)`, // Borda roxa
-    marginTop: 'auto'
+    borderTop: `2px solid var(--pomp-and-power)`,
+    marginTop: 'auto' // Garante que o footer fique no final se o conteúdo for pequeno
   };
 
   return (
-    <>
+    <> {/* O elemento root ou body já deve ter display: flex; flex-direction: column; min-height: 100vh; */}
       <header style={headerStyle}>
         <Link to="/" style={siteTitleStyle}>mathecas.lab</Link>
         <p style={taglineStyle}>
           An interactive playground of experiments & curiosities.
         </p>
-        <nav style={{ marginTop: '1.5rem' }}>
-          <Link to="/" style={navLinkStyle}>Home</Link>
-          <Link to="/cosmic-sloth-oracle" style={navLinkStyle}>Cosmic Sloth Oracle</Link>
-          <Link to="/world-in-numbers" style={navLinkStyle}>World in Numbers</Link>
-        </nav>
+        {/* A seção <nav> foi removida daqui */}
       </header>
 
       <main style={mainContentStyle}>
-        <Outlet />
+        <Outlet /> {/* Os componentes de cada rota serão renderizados aqui */}
       </main>
 
       <footer style={footerStyle}>

@@ -3,146 +3,230 @@
 .heroSection {
   padding: 4rem 1rem;
   text-align: center;
-  /* background-color: var(--elements-background); */ /* Opcional: um fundo diferente para a hero */
-  /* border-bottom: 1px solid var(--pomp-and-power); */
-  margin-bottom: 3rem; /* Espaço antes da grade de projetos */
+  margin-bottom: 3rem;
 }
 
 .heroTitle {
   font-size: 3rem;
-  color: var(--white-smoke); /* Texto principal branco */
+  color: var(--white-smoke);
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
 
-.heroTitle span { /* Para destacar uma palavra com cor */
-    color: var(--pomp-and-power); /* Roxo no título */
+.heroTitle span {
+  color: var(--pomp-and-power);
 }
 
 .heroSubtitle {
   font-size: 1.3rem;
-  color: var(--text-secondary); /* Cinza claro para subtitulo */
+  color: var(--text-secondary);
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.projectsGridTitle {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--white-smoke);
-    margin-bottom: 2rem;
-    font-weight: bold;
-}
-
-.projectsGridTitle span {
-    color: var(--blue-munsell); /* Destaque azul */
-}
-
-.projectsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid responsivo */
-  gap: 2rem; /* Espaço entre os cards */
-}
-
-.projectCard {
-  background-color: var(--elements-background); /* Roxo como fundo do card */
-  padding: 1.5rem;
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Sombra sutil */
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.projectCard:hover {
-    transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
-    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-}
-
-.projectCard h3 {
-  margin-top: 0;
-  color: var(--white-smoke); /* Título do card branco */
-  font-size: 1.5rem;
-}
-
-.projectCard h3 span { /* Para destacar uma parte do título do card */
-    color: var(--burnt-sienna); /* Laranja no título do card */
-}
-
-.projectCard p {
-  color: var(--text-secondary); /* Descrição cinza claro */
-  flex-grow: 1; /* Faz a descrição ocupar o espaço e empurra o link para baixo */
-  margin-bottom: 1.5rem;
-}
-
-.projectCard a { /* Estilo do link/botão dentro do card */
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  background-color: var(--blue-munsell); /* Botão azul */
-  color: var(--white-smoke) !important; /* Força a cor do texto para branco */
-  border-radius: 4px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 500;
-  align-self: flex-start; /* Alinha o botão à esquerda */
-}
-
-.projectCard a:hover {
-  background-color: var(--burnt-sienna); /* Botão laranja no hover */
-  color: var(--white-smoke) !important;
-  text-decoration: none;
-}
-
 .actionButtonsContainer {
   display: flex;
-  justify-content: center; /* Centraliza os botões */
+  justify-content: center;
   align-items: center;
-  gap: 1rem; /* Espaço entre os botões */
-  margin-top: 2.5rem; /* Espaço acima dos botões */
-  flex-wrap: wrap; /* Permite que os botões quebrem linha em telas menores */
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
 }
 
 .actionButton {
-  padding: 0.8em 1.6em; /* Tamanho do padding */
-  border-radius: 6px;   /* Bordas arredondadas */
+  padding: 0.8em 1.6em;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.95rem; /* Tamanho da fonte */
-  color: var(--white-smoke) !important; /* Garante texto branco, sobrescrevendo 'a' global se necessário */
-  border: none; /* Remove qualquer borda padrão */
+  font-size: 0.95rem;
+  color: var(--white-smoke) !important; 
+  border: none;
   cursor: pointer;
   transition: transform 0.2s ease-out, background-color 0.2s ease-out, box-shadow 0.2s ease-out;
   text-align: center;
-  min-width: 150px; /* Largura mínima para manter consistência */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra sutil inicial */
+  min-width: 150px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .actionButton:hover {
-  transform: translateY(-3px); /* Efeito de levantar um pouco mais */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra mais pronunciada no hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Estilos específicos para cada botão, usando sua paleta */
 .linkedinButton {
-  background-color: var(--blue-munsell); /* Azul para LinkedIn */
+  background-color: var(--blue-munsell);
 }
 .linkedinButton:hover {
-  /* Escurece um pouco a cor no hover */
   background-color: color-mix(in srgb, var(--blue-munsell) 85%, var(--night) 15%);
 }
 
 .contactButton {
-  background-color: var(--burnt-sienna); /* Laranja/Terracota para Contato */
+  background-color: var(--burnt-sienna);
 }
 .contactButton:hover {
   background-color: color-mix(in srgb, var(--burnt-sienna) 85%, var(--night) 15%);
 }
 
 .coffeeButton {
-  background-color: var(--pomp-and-power); /* Roxo para Buy Me a Coffee */
+  background-color: var(--pomp-and-power);
 }
 .coffeeButton:hover {
   background-color: color-mix(in srgb, var(--pomp-and-power) 85%, var(--night) 15%);
+}
+
+/* Estilos para a área e grade de projetos */
+.projectsArea {
+  padding-top: 2rem;
+}
+
+.projectsGridTitle {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--white-smoke);
+    margin-bottom: 2.5rem;
+    font-weight: bold;
+}
+
+.projectsGridTitle span {
+    color: var(--blue-munsell); 
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Estilo base para todos os cards */
+.projectCard {
+  background-color: var(--elements-background); 
+  border-radius: 10px; 
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  border-left: 4px solid var(--blue-munsell);
+  overflow: hidden; /* Importante para o efeito de fundo e overlay */
+  position: relative; /* Para posicionar o overlay */
+  min-height: 280px; /* Altura mínima para os cards, ajuste conforme necessário */
+
+  /* Configurações de fundo padrão (serão sobrescritas pelo estilo inline para o card da preguiça) */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.projectCard:nth-child(2n) {
+    border-left-color: var(--burnt-sienna);
+}
+.projectCard:nth-child(3n) {
+    border-left-color: var(--pomp-and-power);
+}
+
+.projectCard:hover {
+    transform: translateY(-6px); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Overlay para o conteúdo do card, especialmente útil quando há imagem de fundo */
+.cardContentOverlay {
+  /* Para cards SEM imagem de fundo específica, este overlay pode ser transparente 
+    ou ter a mesma cor de fundo do .projectCard se você remover o padding do .projectCard.
+    Para o card COM imagem de fundo (Cosmic Sloth), ele terá um fundo semi-transparente.
+  */
+  background-color: transparent; /* Padrão para cards sem imagem de fundo específica */
+  padding: 2rem; /* Padding que estava no .projectCard */
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  position: relative; /* Garante que fique no fluxo normal do card */
+  z-index: 1; /* Para ficar acima de um pseudo-elemento de fundo se usado */
+}
+
+/* Estilo específico para o overlay do card que TEM uma imagem de fundo */
+/* Você pode aplicar uma classe específica no JSX ou usar :has() se o suporte do navegador for bom, */
+/* ou confiar no estilo inline para o background-image e este overlay para o conteúdo. */
+/* Este overlay será usado sobre a imagem de fundo da preguiça. */
+.projectCard[style*="background-image"] .cardContentOverlay { /* Aplica se o card tiver um background-image inline */
+  background-color: rgba(13, 22, 11, 0.877); /* --night com 75% de opacidade */
+  /* Ou um roxo: background-color: rgba(var(--pomp-and-power-rgb, 120, 85, 137), 0.7); */
+}
+
+.projectCard[style*="background-image"]:hover .cardContentOverlay {
+  background-color: rgba(13, 22, 11, 0.88); /* Mais escuro no hover */
+  /* Ou um roxo: background-color: rgba(var(--pomp-and-power-rgb, 120, 85, 137), 0.85); */
+}
+
+
+.projectCard h3 {
+  margin-top: 0;
+  color: var(--white-smoke); 
+  font-size: 1.6rem; 
+  margin-bottom: 0.75rem; 
+}
+
+.projectCard h3 span { 
+    color: var(--burnt-sienna); 
+}
+
+.projectCard:nth-child(2n) h3 span {
+    color: var(--blue-munsell);
+}
+.projectCard:nth-child(3n) h3 span {
+    color: var(--white-smoke);
+}
+
+/* Para o card com imagem de fundo, o span do h3 pode precisar de uma cor diferente para contraste */
+.projectCard[style*="background-image"] h3 span {
+    color: var(--blue-munsell); /* Ou outra cor de destaque clara */
+}
+.projectCard[style*="background-image"]:hover h3 span {
+    color: var(--burnt-sienna);
+}
+
+.projectCard p {
+  color: var(--text-secondary);
+  flex-grow: 1; 
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem; 
+  line-height: 1.65; 
+}
+/* Para o card com imagem de fundo, a descrição pode precisar ser mais clara */
+.projectCard[style*="background-image"] p {
+  color: rgba(245, 243, 245, 0.85); /* --white-smoke com opacidade */
+}
+
+.projectLink { 
+  display: inline-block;
+  padding: 0.7em 1.4em; 
+  background-color: var(--blue-munsell); 
+  color: var(--white-smoke) !important; 
+  border-radius: 5px; 
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600; 
+  align-self: flex-start; 
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  border: 1px solid transparent; 
+}
+
+.projectLink:hover {
+  background-color: var(--burnt-sienna);
+  color: var(--white-smoke) !important;
+  text-decoration: none;
+  transform: scale(1.05); 
+}
+
+.statusBadge { 
+  display: inline-block;
+  padding: 0.5em 0.9em; 
+  border-radius: 5px;
+  font-size: 0.9rem; 
+  font-weight: 600;
+  align-self: flex-start;
 }
